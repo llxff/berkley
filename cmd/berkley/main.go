@@ -14,7 +14,10 @@ func main() {
 		Short: "Berkeley DB tools",
 	}
 
-	rootCmd.AddCommand(commands.GetGenerateCmd())
+	rootCmd.AddCommand(
+		commands.GetGenerateCmd(),
+		commands.GetMetaCmd(),
+	)
 
 	if err := rootCmd.Execute(); err != nil {
 		log.Fatal(err)
